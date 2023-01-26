@@ -1,9 +1,22 @@
 #!/usr/bin/python3
+""" Magiclass module
+"""
 import math
 
 
 class MagicClass:
+    """ Magiclass
+    """
+
     def __init__(self, radius=0):
+        """ Class instance initialization
+
+        Args:
+            radius (int, optional): radius for the magic class. Defaults to 0.
+
+        Raises:
+            TypeError: radius must be a number
+        """
         self.__radius = 0
 
         if type(radius) is not int and type(radius) is not float:
