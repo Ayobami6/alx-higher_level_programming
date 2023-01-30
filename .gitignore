@@ -1,2 +1,3 @@
 pra.ipynb
-__pycache__
+*__pycache__/
+*misc/
