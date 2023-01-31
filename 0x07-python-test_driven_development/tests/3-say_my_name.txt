@@ -25,10 +25,28 @@ My name is Bob
 >>> say_my_name(12, "White")
 Traceback (most recent call last):
     ...
-TypeError: first_name must be a string 
+TypeError: first_name must be a string
 
 
->>> say_my_name("Ayo, 12)
+>>> say_my_name("Ayo", 12)
 Traceback (most recent call last):
     ...
-TypeError: last_name must be a string 
+TypeError: last_name must be a string
+
+>>> say_my_name("Wisdom", 12)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+
+>>> say_my_name(True, 12)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Ayo", True)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
