@@ -8,7 +8,7 @@ def say_my_name(first_name, last_name="") -> None:
 
     Args:
         first_name (str): first name
-        last_name (str, optional): Last name
+        last_name (str, okptional): Last name
 
     Raises:
         TypeError: Name Must be a string

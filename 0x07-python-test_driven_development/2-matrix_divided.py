@@ -4,7 +4,7 @@
 
 
 def matrix_divided(matrix, div):
-    """ Divides all the items of the sub lists by the div 
+    """ Divides all the items of the sub lists by the div
 
     Args:
         matrix (list): list of list
