@@ -1,0 +1,35 @@
+The ``lazy_multiply `` module
+======================
+
+Using ``lazy_multiply``
+------------------------------
+
+This is an example text file in reStructuredText format.  First import
+``lazy_multiply`` from the ``lazy_multiply`` module:
+
+import
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+
+>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13 16]]
+
+>>> print(lazy_matrix_mul())
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> print(lazy_matrix_mul([[1, 2]]))
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+
+>>> print(lazy_matrix_mul([[]], [[]]))
+Traceback (most recent call last):
+    ...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 0)

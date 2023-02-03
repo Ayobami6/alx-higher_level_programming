@@ -19,6 +19,20 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer(test_param)
         self.assertEqual(result, 6)
 
+    def test_max_int_mid(self):
+        """ Testing the function for max integer
+        """
+        test_param = [1, 6, 4]
+        result = max_integer(test_param)
+        self.assertEqual(result, 6)
+
+    def test_max_int_mid(self):
+        """ Testing the function for max integer
+        """
+        test_param = [1, 6, 4]
+        result = max_integer(test_param)
+        self.assertEqual(result, 6)
+
     def test_for_string(self):
         """ Testing for strings
         """
@@ -44,6 +58,16 @@ class TestMaxInteger(unittest.TestCase):
         test_param = ["Ayobami",  "me", "bunmi"]
         result = max_integer(test_param)
         self.assertEqual(result, "me")
+
+    def test_neg_only(self):
+        test_param = [-1, -2, -3, -10]
+        result = max_integer(test_param)
+        self.assertEqual(result,  -1)
+
+    def test_one_neg(self):
+        test_param = [1, 2, -3, 10]
+        result = max_integer(test_param)
+        self.assertEqual(result, 10)
 
 
 if __name__ == "__main__":
