@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""from json module 
+"""from json module
 """
 
 import json
 
 
 def from_json_string(my_str):
-    """ Setsstrings tojson 
+    """ Setsstrings tojson
 
     Args:
         my_str (str): String object
