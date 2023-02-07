@@ -14,8 +14,8 @@ def add_attribute(obj, a, v):
     Raises:
         TypeError: can't add new attribute
     """
-    res = getattr(obj, "__doc__", None)
-    if res is None:
+    res = getattr(obj, "__dict__", None)
+    if res == {}:
         setattr(obj, a, v)
     else:
         raise TypeError("can't add new attribute")

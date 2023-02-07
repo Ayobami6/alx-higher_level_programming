@@ -2,17 +2,18 @@
 """ Myint Module
 """
 
+
 class MyInt(int):
 
     """ My int object
     """
-    
+
     def __eq__(self, other: object) -> bool:
         """ inverts the equality operator
-        
+
         Args:
             other (object): Other object
-        
+
         Returns:
             bool: True or false
         """
@@ -20,10 +21,10 @@ class MyInt(int):
 
     def __ne__(self, other: object) -> bool:
         """ inverts not equal operator
-        
+
         Args:
             other (obj): Other object
-        
+
         Returns:
             bool: True or false
         """
