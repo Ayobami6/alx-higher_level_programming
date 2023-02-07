@@ -13,7 +13,7 @@ class Student:
 
         Args:
             first_name (str): first name
-            last_name (str): last name 
+            last_name (str): last name
             age (str): student age
         """
         self.first_name = first_name
