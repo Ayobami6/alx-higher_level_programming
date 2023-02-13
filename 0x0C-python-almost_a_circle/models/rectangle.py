@@ -185,3 +185,13 @@ class Rectangle(Base):
         elif len(kwargs) != 0:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self) -> dict:
+        """ Details to dict
+
+        Returns:
+            dict: Dictionary of attr
+        """
+        dico = dict(id=self.id, width=self.width,
+                    height=self.height, x=self.x, y=self.y)
+        return dico
