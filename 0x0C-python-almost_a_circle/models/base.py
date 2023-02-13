@@ -75,6 +75,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ create new instance dictionary
+
+        Args:
+            **dictionary: dictionary
+
+        Returns:
+            dict: new instance dict
+        """
         if dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new_instance = cls(2, 3)
@@ -82,3 +90,18 @@ class Base:
                 new_instance = cls(2)
             new_instance.update(**dictionary)
             return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ Load from file
+
+        Returns:
+            list: list of dict
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, mode="r") as file:
+                dict_list = Base.from_json_string(file.read())
+                return [cls.create(**item) for item in dict_list]
+        except IOError:
+            return []
