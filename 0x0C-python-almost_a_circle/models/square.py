@@ -17,12 +17,12 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs) -> None:
-        """ Update rectangle
+        """ Update value method
 
-                        Args:
-                                        *args: tuple of args
-                                        **kwargs: keywords args, key and value arguments
-                        """
+        Args:
+            *args: Tuple of args
+            **kwargs: key, value args
+        """
         if len(args) != 0:
             count = 0
             for arg in args:

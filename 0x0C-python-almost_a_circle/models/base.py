@@ -53,7 +53,7 @@ class Base:
         """
         filename = cls.__name__+".json"
         with open(filename, mode="w") as file:
-            if list_objs == None:
+            if list_objs is None:
                 file.write("[]")
             else:
                 dict_list = []
@@ -71,7 +71,7 @@ class Base:
         Returns:
             json: Retreived dict
         """
-        if json_string == None or json_string == "[]":
+        if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
 
