@@ -2,7 +2,7 @@
 
 const args = process.argv.slice(2);
 
-function fact(n) {
+function fact (n) {
   if (isNaN(n)) return 1;
   if (n === 0) return 1;
   const result = n * fact(n - 1);
