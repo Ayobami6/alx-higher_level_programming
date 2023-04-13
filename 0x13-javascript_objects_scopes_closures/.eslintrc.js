@@ -15,5 +15,6 @@ module.exports = {
         'no-plusplus': 0,
         'space-before-function-paren': 0,
         'no-unused-expressions': 0,
+        'func-names': 0,
     },
 };
