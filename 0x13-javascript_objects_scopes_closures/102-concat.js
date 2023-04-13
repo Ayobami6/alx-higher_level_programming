@@ -6,4 +6,4 @@ const fileTwo = fs.readFileSync(process.argv[3]);
 
 const destinationFile = process.argv[4];
 
-fs.writeFileSync(destinationFile, fileOne + fileTwo);
+fs.writeFile(destinationFile, fileOne + fileTwo);
