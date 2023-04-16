@@ -1,3 +1,5 @@
 pra.ipynb
 *__pycache__/
 *misc/
+*venv/
+*session.py
