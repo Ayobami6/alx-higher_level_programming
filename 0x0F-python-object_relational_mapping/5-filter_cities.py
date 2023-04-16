@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ Select all columns from states table in hbtn database where
 name is the last arg passed from the commandline and preventing
-sql injection attack
+sql injection attack and filtering based on the 5 arg passed from
+the commandline
 """
 import MySQLdb
 from sys import argv
