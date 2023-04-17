@@ -14,7 +14,8 @@ def main():
     """
     # create an engine
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
+                           .format(argv[1], argv[2],
+                                   argv[3]), pool_pre_ping=True)
     # create all tables in the engine. This is equivalent to "Create Table"
     Base.metadata.create_all(engine)
     # create a configured "Session" class
