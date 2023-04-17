@@ -20,4 +20,11 @@ class User(Base):
             self.name, self.fullname, self.nickname)
 
 
-print(repr(User.__table__))
+# print(repr(User.__table__))
+
+name = "Ayo"
+lname = "Ogunseinde"
+
+print(name, lname, sep=": ")
+
+print(f"{name}: {lname}")
