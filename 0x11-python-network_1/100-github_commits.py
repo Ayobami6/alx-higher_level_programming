@@ -27,7 +27,6 @@ def main():
                   format(commits[i]['sha'],
                          commits[i]['commit']['author']['name']))
     except IndexError:
-        print("Commits less than 10")
         pass
 
 
