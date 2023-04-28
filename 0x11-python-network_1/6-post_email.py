@@ -10,3 +10,7 @@ def main():
     response = urllib.request.Request(url)
     with urllib.request.urlopen(response) as response:
         print(response.read().decode('utf-8'))
+
+
+if __name__ == "__main__":
+    main()
