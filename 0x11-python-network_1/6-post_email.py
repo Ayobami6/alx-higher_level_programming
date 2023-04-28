@@ -11,7 +11,7 @@ def main():
     url = argv[1]
     response = urllib.request.Request(url)
     with urllib.request.urlopen(response) as response:
-        print(response.read().decode('utf-8'))
+        print(dict(response.headers).get("X-Request-Id"))
 
 
 if __name__ == "__main__":
