@@ -4,22 +4,28 @@ const request = require('request');
 const args = process.argv.slice(2);
 
 function getCharacterNameInOrder (movieId) {
-  const apiUrl = 'https://swapi-api.hbtn.io/api/films/' + movieId;
-  // get characters names from api in the right order
-  request.get(apiUrl, function (error, body) {
+  const apiUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
+  request.get({ url: apiUrl, json: true }, function (error, response, body) {
     if (error) {
-      console.log(error);
-    } else {
-      const characters = JSON.parse(body).characters;
-      for (let i = 0; i < characters.length; i++) {
-        request.get(characters[i], function (error, body) {
-          if (error) {
-            console.log(error);
-          } else {
-            console.log(JSON.parse(body).name);
-          }
+      console.error(error);
+    } else if (response.statusCode === 200) {
+      const characters = body.characters;
+      const promises = characters.map((url) => {
+        return new Promise((resolve, reject) => {
+          request.get({ url, json: true }, function (error, body) {
+            if (error) {
+              reject(error);
+            } else {
+              resolve(body.name);
+            }
+          });
         });
-      }
+      });
+      Promise.all(promises)
+        .then((names) => console.log(names.join('\n')))
+        .catch((error) => console.error(error));
+    } else {
+      console.error(`Request failed with status code ${response.statusCode}`);
     }
   });
 }
