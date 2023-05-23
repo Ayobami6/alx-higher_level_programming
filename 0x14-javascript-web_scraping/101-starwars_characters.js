@@ -12,7 +12,7 @@ function getCharacterNameInOrder (movieId) {
       const characters = body.characters;
       const promises = characters.map((url) => {
         return new Promise((resolve, reject) => {
-          request.get({ url, json: true }, function (error, body) {
+          request.get({ url, json: true }, function (error, response, body) {
             if (error) {
               reject(error);
             } else {
@@ -21,6 +21,7 @@ function getCharacterNameInOrder (movieId) {
           });
         });
       });
+
       Promise.all(promises)
         .then((names) => console.log(names.join('\n')))
         .catch((error) => console.error(error));
